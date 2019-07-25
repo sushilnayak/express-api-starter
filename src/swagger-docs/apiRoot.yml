@@ -1,0 +1,29 @@
+definitions:
+  App:
+    title: App
+    type: object
+    properties:
+      app:
+        type: string
+      version:
+        type: string
+      description:
+        type: string
+      logLevel:
+        type: string
+
+/:
+  get:
+    summary: Application information
+    description: Provides basic application information
+    produces:
+      - application/json
+    tags:
+      - Base
+    responses:
+      200:
+        description: Application basic information
+        schema:
+          title: Users
+          type: object
+          $ref: '#/definitions/App'

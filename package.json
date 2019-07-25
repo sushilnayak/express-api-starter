@@ -1,11 +1,74 @@
 {
   "name": "simple-express-api-starter",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "jest --coverage",
+    "clean": "rimraf dist",
+    "build": "babel src -d dist"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushilnayak/simple-express-api-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sushilnayak/simple-express-api-starter/issues"
+  },
+  "homepage": "https://github.com/sushilnayak/simple-express-api-starter#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "http-status-codes": "^1.3.2",
+    "morgan": "^1.9.1",
+    "swagger-jsdoc": "^3.3.0",
+    "swagger-ui-dist": "^3.23.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "superagent": "^5.1.0",
+    "supertest": "^4.0.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "setupFilesAfterEnv": [],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js",
+      "<rootDir>/src/**/*.{spec,test}.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
+    ]
+  }
 }
