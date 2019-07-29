@@ -4,20 +4,20 @@ import fs from 'fs'
 import cors from "cors";
 import compression from 'compression'
 import morgan from 'morgan';
-import bodyParser from "body-parser";
 import helmet from 'helmet'
 import swaggerUiDist from 'swagger-ui-dist';
 
 import routes from './routes'
 import logger, {logStream} from './startup/logger';
-const  pathToSwaggerUi = swaggerUiDist.absolutePath()
+
+const pathToSwaggerUi = swaggerUiDist.absolutePath()
 
 const app = express()
 app.use(cors());
 app.use(helmet())
 app.use(compression());
 app.use(morgan('combined', {stream: logStream}));
-app.use(bodyParser.json());
+app.use(express.json({extended: false}));
 
 app.use('/api', routes);
 

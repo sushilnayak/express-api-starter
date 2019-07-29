@@ -20,11 +20,11 @@
   "homepage": "https://github.com/sushilnayak/simple-express-api-starter#readme",
   "description": "",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.1.1",
     "helmet": "^3.20.0",
     "http-status-codes": "^1.3.2",
     "morgan": "^1.9.1",
@@ -56,6 +56,7 @@
     ]
   },
   "jest": {
+    "testEnvironment": "node",
     "collectCoverageFrom": [
       "src/**/*.js"
     ],

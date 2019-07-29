@@ -1,7 +1,7 @@
 import {Router} from 'express'
 import HttpStatus from 'http-status-codes'
 import swaggerSpec from '../swagger'
-// import students from './students'
+// import studentRoute from './student'
 
 const router = Router()
 
@@ -14,6 +14,6 @@ router.get('/', (req, res) => res.json({
   logLevel: process.env.APP_LOG_LEVEL
 }).status(HttpStatus.OK))
 
-// router.use('/students', students);
+// router.use('/student', studentRoute);
 
 export default router
