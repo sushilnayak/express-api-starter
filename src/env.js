@@ -9,3 +9,4 @@ process.env.APP_TITLE      = NPMPackage.title
 process.env.APP_DESCRIPTION= NPMPackage.description
 process.env.APP_PORT       = process.env.PORT || 4000
 process.env.APP_LOG_LEVEL  = process.env.LOG_LEVEL || "info"
+process.env.APP_MONGOOSE_DEBUG_MODE  = process.env.MONGOOSE_DEBUG_MODE || true

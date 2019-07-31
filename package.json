@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "jest --coverage",
+    "test": "jest --watchAll",
+    "test:ci" : "jest --coverage --watchAll --coverageReporters=text",
     "clean": "rimraf dist",
     "build": "babel src -d dist"
   },
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/sushilnayak/simple-express-api-starter#readme",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -27,6 +29,8 @@
     "express-validator": "^6.1.1",
     "helmet": "^3.20.0",
     "http-status-codes": "^1.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.7",
     "morgan": "^1.9.1",
     "swagger-jsdoc": "^3.3.0",
     "swagger-ui-dist": "^3.23.1",

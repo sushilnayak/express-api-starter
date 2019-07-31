@@ -1,5 +1,5 @@
-import path from 'path';
-import swaggerJSDoc from 'swagger-jsdoc';
+import path from "path";
+import swaggerJSDoc from "swagger-jsdoc";
 
 const swaggerDefinition = {
   info: {
@@ -7,13 +7,13 @@ const swaggerDefinition = {
     version: process.env.APP_VERSION,
     description: process.env.APP_DESCRIPTION
   },
-  basePath: '/api'
+  basePath: "/api"
 };
 
 const swaggerOptions = {
   swaggerDefinition: swaggerDefinition,
   apis: [
-    path.join(__dirname, '../swagger-docs/*.yml')
+    path.join(__dirname, "../swagger-docs/*.yml")
   ]
 };
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
